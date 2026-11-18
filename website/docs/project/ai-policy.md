@@ -1,6 +1,6 @@
 # AI policy
 
-Spyglass (and Spyglass Reloaded) is human-led. We make the architectural and design decisions, and we will defend every line that ships.
+Spyglass (and PXX-Spyglass) is human-led. We make the architectural and design decisions, and we will defend every line that ships.
 
 AI assists with boilerplate, testing, and drafting issues. It does not decide the direction of the project.
 

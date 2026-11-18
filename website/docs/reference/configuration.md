@@ -105,7 +105,7 @@ The wand's display name and lore are configured in `messages.conf` under `tool.n
 
 ## Messages & Internationalization
 
-Spyglass Reloaded supports full customization of user-facing feedback, prefixes, dates, and results in `plugins/Spyglass/messages.conf`.
+PXX-Spyglass supports full customization of user-facing feedback, prefixes, dates, and results in `plugins/Spyglass/messages.conf`.
 
 - **MiniMessage:** All messages and templates use Kyori Adventure MiniMessage formatting (`<gray>`, `<green>`, `<bold>`, `<click:...>`, etc.).
 - **PlaceholderAPI:** If [PlaceholderAPI](https://placeholderapi.com/) is present on your server, any `%placeholder%` supported by PAPI will be resolved across in-game feedback and messages.

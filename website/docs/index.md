@@ -1,9 +1,9 @@
-# Spyglass Reloaded
+# PXX-Spyglass
 
 Logging and rollback for Paper 26.1.2, 26.2 and 26.3. See who changed what, search it in seconds, and roll back griefing without lagging the server.
 
 !!! note "Community Fork & Documentation Notice"
-    **Spyglass Reloaded** is an independent community fork of the original [Spyglass](https://github.com/medievalrp-net/Spyglass) plugin created by [MedievalRP](https://github.com/medievalrp-net). It introduces additional customization, per-event hover controls, timezone support, and per-action permissions.
+    **PXX-Spyglass** is an independent community fork of the original [Spyglass](https://github.com/medievalrp-net/Spyglass) plugin created by [MedievalRP](https://github.com/medievalrp-net). It introduces additional customization, per-event hover controls, timezone support, and per-action permissions.
 
     *This documentation is based on the original Spyglass documentation and adapted to the features and improvements included in this fork.*
 

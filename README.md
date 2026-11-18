@@ -1,8 +1,8 @@
 <p align="center">
-  <img src=".github/assets/logo.jpg" alt="Spyglass Reloaded" width="256">
+  <img src=".github/assets/logo.jpg" alt="PXX-Spyglass" width="256">
 </p>
 
-<h1 align="center">Spyglass Reloaded</h1>
+<h1 align="center">PXX-Spyglass</h1>
 
 <p align="center">
   Logging and rollback for Paper 26.1.2, 26.2 and 26.3.<br>
@@ -10,7 +10,7 @@
 </p>
 
 > [!NOTE]
-> **Spyglass Reloaded** is an independent community fork of the original [Spyglass](https://github.com/medievalrp-net/Spyglass) plugin created by [MedievalRP](https://github.com/medievalrp-net). This project is not affiliated with or endorsed by the original authors.
+> **PXX-Spyglass** is an independent community fork of the original [Spyglass](https://github.com/medievalrp-net/Spyglass) plugin created by [MedievalRP](https://github.com/medievalrp-net). This project is not affiliated with or endorsed by the original authors.
 
 <p align="center">
   <a href="https://github.com/Paradoxx710/Spyglass/releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/Paradoxx710/Spyglass?style=for-the-badge&label=Download&color=2ea44f"></a>
@@ -24,7 +24,7 @@
   <a href="https://github.com/Paradoxx710/Spyglass/actions/workflows/verify.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Paradoxx710/Spyglass/verify.yml?branch=main&style=flat-square&label=build"></a>
 </p>
 
-**Spyglass Reloaded** records blocks, containers, items, chat, commands, logins and combat, lets staff search all of it with short queries, and rolls back griefing off the main thread. It runs on ClickHouse (recommended), SQLite, MariaDB/MySQL or MongoDB.
+**PXX-Spyglass** records blocks, containers, items, chat, commands, logins and combat, lets staff search all of it with short queries, and rolls back griefing off the main thread. It runs on ClickHouse (recommended), SQLite, MariaDB/MySQL or MongoDB.
 
 This project is built upon the solid foundation of [Spyglass](https://github.com/medievalrp-net/Spyglass), incorporating custom improvements, fixes, and community features.
 
