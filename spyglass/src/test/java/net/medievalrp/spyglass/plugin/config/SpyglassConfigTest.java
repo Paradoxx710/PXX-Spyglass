@@ -180,29 +180,6 @@ class SpyglassConfigTest {
                 .containsExactly("login");
     }
 
-    @Test
-    void absentMetricsKeyDefaultsToEnabled() {
-        BasicConfigurationNode root = BasicConfigurationNode.root();
-
-        assertThat(SpyglassConfig.parseMetrics(root).enabled()).isTrue();
-    }
-
-    @Test
-    void explicitMetricsFalseIsTheOptOut() throws SerializationException {
-        BasicConfigurationNode root = BasicConfigurationNode.root();
-        root.node("metrics", "enabled").set(false);
-
-        assertThat(SpyglassConfig.parseMetrics(root).enabled()).isFalse();
-    }
-
-    @Test
-    void explicitMetricsTrueKeepsItEnabled() throws SerializationException {
-        BasicConfigurationNode root = BasicConfigurationNode.root();
-        root.node("metrics", "enabled").set(true);
-
-        assertThat(SpyglassConfig.parseMetrics(root).enabled()).isTrue();
-    }
-
     // #168: analytics is opt-in (default off), with a 60s default interval
     // floored at 5s.
     @Test

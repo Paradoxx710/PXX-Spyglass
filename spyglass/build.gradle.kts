@@ -26,7 +26,6 @@ val testcontainersVersion: String by rootProject.extra
 val jetbrainsAnnotationsVersion: String by rootProject.extra
 val faweVersion: String by rootProject.extra
 val worldeditVersion: String by rootProject.extra
-val bstatsVersion: String by rootProject.extra
 val inventoryFrameworkVersion: String by rootProject.extra
 
 java {
@@ -84,14 +83,8 @@ dependencies {
     implementation("org.incendo:cloud-paper:$cloudMinecraftVersion")
     implementation("org.incendo:cloud-annotations:$cloudCoreVersion")
     implementation("org.incendo:cloud-minecraft-extras:$cloudMinecraftVersion")
-    // bStats metrics. Shaded + relocated into BOTH shipped jars (see the
-    // ShadowJar relocate below) - deliberately NOT placed under plugin.yml
-    // `libraries:`, because Paper's library loader can't relocate and bStats
-    // requires relocation to avoid clashing with other plugins' copies. It is
-    // tiny (~25 KB), so bundling it in the lean jar too doesn't dent "lean".
-    implementation("org.bstats:bstats-bukkit:$bstatsVersion")
     // Inventory GUIs. Bukkit-API only, so one release runs on every supported
-    // Minecraft version. Shaded + relocated into both shipped jars, like bStats.
+    // Minecraft version. Shaded + relocated into both shipped jars.
     // The Paper module only adds Adventure titles; it pulls the Bukkit module
     // at runtime scope, so that one is declared for compilation too.
     implementation("me.devnatan:inventory-framework-platform-bukkit:$inventoryFrameworkVersion")
@@ -196,23 +189,17 @@ val leanJar = tasks.register<ShadowJar>("leanJar") {
     archiveClassifier.set("")
     from(sourceSets["main"].output)
     configurations = listOf(project.configurations.runtimeClasspath.get())
-    // Keep our own modules, bStats, inventory-framework and its FoliaLib.
+    // Keep our own modules, inventory-framework and its FoliaLib.
     // Everything else is declared under plugin.yml `libraries:` and resolved by
     // Paper at runtime, so it must not be bundled here. The bundled libraries
     // need private relocated packages, so they ship in both distributions.
-    val bundledGroups = setOf("net.medievalrp", "org.bstats", "me.devnatan", "com.tcoded")
+    val bundledGroups = setOf("net.medievalrp", "me.devnatan", "com.tcoded")
     dependencies {
         exclude { it.moduleGroup !in bundledGroups }
     }
 }
 
-// bStats must be relocated out of `org.bstats` into our own namespace in EVERY
-// shaded artifact (the lean default jar and the fat fallback alike). bStats
-// refuses to run unrelocated, and an unrelocated copy would collide with any
-// other plugin that also bundles bStats. Applying it to all ShadowJar tasks
-// keeps the rule in one place.
 tasks.withType<ShadowJar>().configureEach {
-    relocate("org.bstats", "net.medievalrp.spyglass.libs.bstats")
     relocate("me.devnatan.inventoryframework", "net.medievalrp.spyglass.libs.inventoryframework")
     relocate("com.tcoded.folialib", "net.medievalrp.spyglass.libs.folialib")
 }

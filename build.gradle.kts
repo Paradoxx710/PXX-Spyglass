@@ -81,7 +81,6 @@ val testcontainersVersion = "1.21.3"
 val jetbrainsAnnotationsVersion = "26.0.2"
 val faweVersion = "2.15.2"
 val worldeditVersion = "7.4.5"
-val bstatsVersion = "3.2.1"
 // DevNatan's inventory-framework. Bukkit-API only, so one release covers every
 // supported Minecraft version; 3.7.x needs FoliaLib from repo.tcoded.com.
 val inventoryFrameworkVersion = "3.7.2"
@@ -246,6 +245,5 @@ extra.apply {
     set("jetbrainsAnnotationsVersion", jetbrainsAnnotationsVersion)
     set("faweVersion", faweVersion)
     set("worldeditVersion", worldeditVersion)
-    set("bstatsVersion", bstatsVersion)
     set("inventoryFrameworkVersion", inventoryFrameworkVersion)
 }

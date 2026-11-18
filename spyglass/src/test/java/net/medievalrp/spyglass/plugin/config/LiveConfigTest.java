@@ -39,7 +39,7 @@ class LiveConfigTest {
         return new SpyglassConfig(null, new SpyglassConfig.Storage(Duration.parse(retention), queue, 0, false, 10, Duration.parse("10s")),
                 java.time.ZoneId.of(SpyglassConfig.DEFAULT_TIMEZONE), null, null,
                 Map.of("break", new SpyglassConfig.EventSettings(true, "broke", null, false)),
-                List.of("login"), new SpyglassConfig.Tool(wand, Duration.parse("26w")), null, null, null, null, null, null);
+                List.of("login"), new SpyglassConfig.Tool(wand, Duration.parse("26w")), null, null, null, null, null);
     }
     @Test void liveSettingsCanChangeTogether() {
         assertThat(LiveConfig.restartRequired(config(100, "1w", Material.REDSTONE_LAMP),

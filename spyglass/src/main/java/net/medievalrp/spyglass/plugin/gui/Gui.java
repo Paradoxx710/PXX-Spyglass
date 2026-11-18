@@ -27,8 +27,7 @@ public final class Gui {
 
     public Gui(Plugin plugin) {
         this.plugin = plugin;
-        // disableMetrics: Spyglass has its own opt-out bStats (metrics.enabled);
-        // the library's separate reporting would ignore that switch.
+        // disableMetrics: disable third-party telemetry in inventory-framework.
         this.frame = ViewFrame.create(plugin)
                 .with(new MenuView(), new PagedMenuView())
                 .disableMetrics()

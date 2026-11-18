@@ -24,7 +24,6 @@ public record SpyglassConfig(
         java.util.List<String> commandRedact,
         Tool tool,
         Server server,
-        Metrics metrics,
         Analytics analytics,
         Commands commands,
         WorldEdit worldedit,
@@ -279,7 +278,6 @@ public record SpyglassConfig(
                         // so a long default is cheap (#271).
                         Duration.parse(root.node("tool", "lookback").getString("26w"))),
                 new Server(root.node("server", "name").getString("default")),
-                parseMetrics(root),
                 parseAnalytics(root),
                 // /s as a third root alias next to /spyglass and /sg. On by
                 // default (#279, reversing #250's opt-in); an operator whose
@@ -364,19 +362,6 @@ public record SpyglassConfig(
             aliases.put("root", java.util.List.copyOf(rootExtras));
         }
         return java.util.Collections.unmodifiableMap(aliases);
-    }
-
-    /**
-     * bStats metrics opt-out. The key is absent on configs predating this
-     * option (and on a fresh default that leaves it on), so a missing value
-     * defaults to {@code true} - matching bStats' documented opt-out model.
-     * An explicit {@code metrics.enabled = false} disables Spyglass's own
-     * submission; the server-global {@code plugins/bStats/config.yml} the
-     * library writes is a second, server-wide switch. Static + package-visible
-     * so it's unit-testable headless, like {@link #parseCommandRedact}.
-     */
-    static Metrics parseMetrics(ConfigurationNode root) {
-        return new Metrics(root.node("metrics", "enabled").getBoolean(true));
     }
 
     /**
@@ -789,14 +774,6 @@ public record SpyglassConfig(
                 name = "default";
             }
         }
-    }
-
-    /**
-     * Anonymous usage metrics via bStats (https://bstats.org). {@code enabled}
-     * defaults to {@code true}; set {@code metrics.enabled = false} in
-     * {@code config.conf} to opt this server out of Spyglass's submission.
-     */
-    public record Metrics(boolean enabled) {
     }
 
     /**
