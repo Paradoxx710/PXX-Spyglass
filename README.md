@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/Paradoxx710/Spyglass/releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/Paradoxx710/Spyglass?style=for-the-badge&label=Download&color=2ea44f"></a>
-  <a href="https://medievalrp-net.github.io/Spyglass/"><img alt="Upstream Docs" src="https://img.shields.io/badge/Original%20Docs-Read-4b6bfb?style=for-the-badge&logo=materialformkdocs&logoColor=white"></a>
+  <a href="https://Paradoxx710.github.io/Spyglass/"><img alt="Docs" src="https://img.shields.io/badge/Docs-Read-4b6bfb?style=for-the-badge&logo=materialformkdocs&logoColor=white"></a>
   <a href="https://github.com/medievalrp-net/Spyglass"><img alt="Upstream Repo" src="https://img.shields.io/badge/Upstream-Spyglass-181717?style=for-the-badge&logo=github&logoColor=white"></a>
 </p>
 
@@ -28,18 +28,11 @@
 
 This project is built upon the solid foundation of [Spyglass](https://github.com/medievalrp-net/Spyglass), incorporating custom improvements, fixes, and community features.
 
-For baseline usage, commands, and configuration reference, consult the upstream **[documentation](https://medievalrp-net.github.io/Spyglass/)**.
+For usage, commands, and configuration reference, consult the **[PXX-Spyglass documentation](https://Paradoxx710.github.io/Spyglass/)**.
 
 ## Upstream Project & Credits
 
 This project is based on [Spyglass](https://github.com/medievalrp-net/Spyglass), originally created and maintained by the MedievalRP team and contributors. All credit for the original architecture and design belongs to them.
-
-Original sponsors:
-<p>
-  <a href="https://crusalis.net"><img src=".github/assets/crusalis.webp" height="90" alt="Crusalis: Glory of Rome"></a>
-  &nbsp;&nbsp;
-  <a href="https://apply.istoria.events/"><img src=".github/assets/istoria.jpg" height="90" alt="Istoria"></a>
-</p>
 
 ## Modules
 
