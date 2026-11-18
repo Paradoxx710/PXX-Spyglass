@@ -45,4 +45,4 @@ Seeing IPs needs the `spyglass.search.ip` permission, separate from `spyglass.se
 
 ## Still stuck?
 
-Ask on [Discord](https://discord.gg/7kxDxMYKyW) or [open an issue](https://github.com/medievalrp-net/Spyglass/issues). Include your Spyglass version (`/sg version`), Paper version, database backend and any errors from the console.
+Ask on the upstream [Discord](https://discord.gg/7kxDxMYKyW) or [open an issue](https://github.com/Paradoxx710/Spyglass/issues) on our repository. Include your Spyglass version (`/sg version`), Paper version, database backend and any errors from the console.

@@ -19,6 +19,15 @@ Every permission defaults to **op**. Give them to staff with your permissions pl
 | `spyglass.reload` | `/sg reload` |
 | `spyglass.update` | Getting update notices in chat |
 
+## Per-action permissions
+
+In `config.conf`, each event type under `events` can define granular permissions:
+
+- **`permission`**: Restricts who can search, inspect with the wand (`/sg tool`), or tab-complete that specific action. For example, if `events.break.permission = "spyglass.action.break"`, players need both `spyglass.search` and `spyglass.action.break` to see break records. If omitted or empty, it defaults to standard `spyglass.search`.
+- **`rollback-permission`**: Restricts who can roll back or restore that specific action. For example, if `events.break.rollback-permission = "spyglass.rollback.break"`, executing `/sg rollback a:break` requires that permission node. If omitted or empty, it defaults to `spyglass.rollback`.
+
+This allows granting junior staff access to roll back common griefs (like block placements or breaks) without granting permission to roll back containers, inventory, or entity events.
+
 ## Suggested staff setup
 
 | Role | Permissions |

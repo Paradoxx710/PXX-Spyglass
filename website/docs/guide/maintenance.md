@@ -10,8 +10,10 @@ Applies config changes without a restart. Needs `spyglass.reload`.
 
 Only these settings reload live:
 
-- Event settings: on/off, the past-tense verb and per-event retention
+- Event settings: on/off, the past-tense verb, per-event retention, and custom per-event permissions
 - `storage.retention`
+- `timezone`
+- The entire `messages.conf` file (MiniMessage templates, hover lines, date formats)
 - Command redaction (the `redact` list)
 - The wand item and how far back it looks
 
@@ -40,7 +42,3 @@ updates { enabled = false }
 Shows the disk overflow backlog: events from a huge WorldEdit edit that were parked on disk and aren't searchable until they're written to the database.
 
 For more, set `analytics.enabled = true` in `config.conf` and restart. `/sg stats` then also shows events recorded per second, the write queue and database throughput, and the console logs them every minute.
-
-## Usage statistics (bStats)
-
-Spyglass sends anonymous usage stats to [bStats](https://bstats.org): server version, player-count range, Java version and storage backend. To opt out, set `metrics.enabled = false`.

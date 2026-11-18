@@ -15,7 +15,7 @@ Spyglass works without a database server: until you set one up, it stores everyt
 
 ## Download
 
-Get the [latest release](https://github.com/medievalrp-net/Spyglass/releases/latest). It has two jars. Pick **one**:
+Get the [latest release](https://github.com/Paradoxx710/Spyglass/releases/latest). It has two jars. Pick **one**:
 
 | Jar | When to use it |
 | --- | --- |

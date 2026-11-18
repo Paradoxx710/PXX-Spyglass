@@ -31,17 +31,25 @@ database {
 
 ## Events
 
-One line per [event type](events.md). You can turn any of them off, change the verb shown in results, or give it its own retention:
+One line per [event type](events.md). You can turn any of them off, change the verb shown in results, set custom permissions, or give it its own retention:
 
 ```hocon
 events {
-  break = { enabled = true, past-tense = "broke" }
+  break = {
+    enabled = true
+    past-tense = "broke"
+    permission = "spyglass.action.break"          # custom permission for searching/inspecting this event
+    rollback-permission = "spyglass.rollback.break" # custom permission for rolling back this event
+  }
   say   = { enabled = true, past-tense = "said", retention = "30d" }
   transfer-deposit = { enabled = false, past-tense = "piped in" }
 }
 ```
 
 A disabled event isn't recorded at all, so it can't be searched or rolled back. All of this reloads live.
+
+- `permission`: optional permission required to search, inspect with wand, or tab-complete this action (e.g. `spyglass.action.break`). If omitted or empty, falls back to `spyglass.search`.
+- `rollback-permission`: optional permission required to roll back or restore this action (e.g. `spyglass.rollback.break`). If omitted or empty, falls back to `spyglass.rollback`.
 
 ### Hiding passwords in commands
 
@@ -95,6 +103,17 @@ Results don't show that a line was blocked. Only `say` and `command` read this s
 
 The wand's display name and lore are configured in `messages.conf` under `tool.name` and `tool.lore` (a list of lines).
 
+## Messages & Internationalization
+
+Spyglass Reloaded supports full customization of user-facing feedback, prefixes, dates, and results in `plugins/Spyglass/messages.conf`.
+
+- **MiniMessage:** All messages and templates use Kyori Adventure MiniMessage formatting (`<gray>`, `<green>`, `<bold>`, `<click:...>`, etc.).
+- **PlaceholderAPI:** If [PlaceholderAPI](https://placeholderapi.com/) is present on your server, any `%placeholder%` supported by PAPI will be resolved across in-game feedback and messages.
+- **Configurable Time & Date formats:** You can customize date patterns under `time` in `messages.conf`:
+  - `time.date-grouped`: Date format for grouped results (default: `"d/M/yyyy"`).
+  - `time.date-instant`: Timestamp format for precise lookups (default: `"yyyy-MM-dd HH:mm:ss"`).
+  - Relative time units like `time.just-now`, `time.seconds`, `time.minutes`, `time.hours`, `time.days`, `time.weeks`.
+
 ## Log display
 
 The result row and hover tooltip are customizable in `plugins/Spyglass/messages.conf`. `results.line` is a MiniMessage template for both grouped and individual results:
@@ -130,11 +149,11 @@ These settings are loaded with `messages.conf` and apply after `/sg reload`.
 
 | Setting | Default | Meaning |
 | --- | --- | --- |
+| `timezone` | `"America/New_York"` | IANA time-zone ID used to format and display event dates and times (e.g. `"America/New_York"`, `"UTC"`, `"Europe/Madrid"`). Reloads live |
 | `commands.aliases.<command>` | Shipped aliases | Extra names for each command. Delete a name to unregister it; `[]` keeps only the canonical command. Restart required |
 | `commands.s-alias` | `true` | Legacy switch for `/s`; `false` removes it from `commands.aliases.root`. Prefer editing the root list directly |
 | `worldedit.enabled` | `true` | Log WorldEdit and FAWE edits. This is the only switch for them; turning off `place`/`break` doesn't affect WorldEdit |
 | `server.name` | `"default"` | This server's name, for `srv:` when servers share a database |
-| `metrics.enabled` | `true` | Anonymous [bStats](https://bstats.org) usage stats |
 | `analytics.enabled` | `false` | Track recording stats for `/sg stats` and log them every `analytics.interval` |
 | `updates.enabled` | `true` | Check GitHub for new releases |
 

@@ -1,10 +1,16 @@
-# Spyglass
+# Spyglass Reloaded
 
 Logging and rollback for Paper 26.1.2, 26.2 and 26.3. See who changed what, search it in seconds, and roll back griefing without lagging the server.
 
-[Install Spyglass](guide/installation.md){ .md-button .md-button--primary }
+!!! note "Community Fork & Documentation Notice"
+    **Spyglass Reloaded** is an independent community fork of the original [Spyglass](https://github.com/medievalrp-net/Spyglass) plugin created by [MedievalRP](https://github.com/medievalrp-net). It introduces additional customization, per-event hover controls, timezone support, and per-action permissions.
+
+    *This documentation is based on the original Spyglass documentation and adapted to the features and improvements included in this fork.*
+
+[Installation](guide/installation.md){ .md-button .md-button--primary }
 [Quick start](guide/quick-start.md){ .md-button }
-[Download](https://github.com/medievalrp-net/Spyglass/releases/latest){ .md-button }
+[Releases](https://github.com/Paradoxx710/Spyglass/releases/latest){ .md-button }
+[Upstream Project](https://github.com/medievalrp-net/Spyglass){ .md-button }
 
 ## How it compares to CoreProtect
 

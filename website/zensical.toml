@@ -1,12 +1,12 @@
 [project]
-site_name = "Spyglass"
-site_description = "Logging and rollback for Paper servers."
-# Served from GitHub Pages at medievalrp-net.github.io/Spyglass/.
-site_url = "https://medievalrp-net.github.io/Spyglass/"
-repo_url = "https://github.com/medievalrp-net/Spyglass"
-repo_name = "medievalrp-net/Spyglass"
+site_name = "Spyglass Reloaded"
+site_description = "Logging and rollback for Paper servers (Community Fork)."
+# Served from GitHub Pages at Paradoxx710.github.io/Spyglass/.
+site_url = "https://Paradoxx710.github.io/Spyglass/"
+repo_url = "https://github.com/Paradoxx710/Spyglass"
+repo_name = "Paradoxx710/Spyglass"
 edit_uri = "edit/main/website/docs/"
-copyright = "The plugin is GPL-3.0; the API is Apache-2.0."
+copyright = "Fork of Spyglass. The plugin is GPL-3.0; the API is Apache-2.0."
 
 nav = [
   { "Home" = "index.md" },
@@ -74,7 +74,7 @@ toggle.name = "Switch to dark mode"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/medievalrp-net/Spyglass"
+link = "https://github.com/Paradoxx710/Spyglass"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/discord"
