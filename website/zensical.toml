@@ -1,10 +1,10 @@
 [project]
 site_name = "PXX-Spyglass"
 site_description = "Logging and rollback for Paper servers (Community Fork)."
-# Served from GitHub Pages at Paradoxx710.github.io/Spyglass/.
-site_url = "https://Paradoxx710.github.io/Spyglass/"
-repo_url = "https://github.com/Paradoxx710/Spyglass"
-repo_name = "Paradoxx710/Spyglass"
+# Served from GitHub Pages at Paradoxx710.github.io/PXX-Spyglass/.
+site_url = "https://Paradoxx710.github.io/PXX-Spyglass/"
+repo_url = "https://github.com/Paradoxx710/PXX-Spyglass"
+repo_name = "Paradoxx710/PXX-Spyglass"
 edit_uri = "edit/main/website/docs/"
 copyright = "Fork of Spyglass. The plugin is GPL-3.0; the API is Apache-2.0."
 
@@ -74,7 +74,7 @@ toggle.name = "Switch to dark mode"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/Paradoxx710/Spyglass"
+link = "https://github.com/Paradoxx710/PXX-Spyglass"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/discord"
