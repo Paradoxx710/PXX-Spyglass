@@ -1,2 +1,17 @@
-- Hopper logging no longer throws errors on Leaf and other forks that tick worlds in parallel, and costs less server time around chests (#373, thanks @IbanEtchep).
-- New `log-cancelled` option for `say` and `command` records chat and commands that another plugin cancelled. Off by default, applies on `/sg reload` (#346, thanks @IbanEtchep).
+- **MiniMessage & PlaceholderAPI support** — all plugin messages and result line templates are now fully customizable via `messages.conf` using MiniMessage formatting. PlaceholderAPI placeholders are resolved automatically if the plugin is installed.
+- **Configurable time/date formats** — `time.*` keys in `messages.conf` let you change how timestamps and relative times are displayed in results.
+- **Config versioning** — a `config-version` field guards automatic migration of settings on upgrade; existing configs are updated in-place without data loss.
+- **Sign-edit logging** — a new `sign-edit` event records sign text changes (including the initial text placed at sign creation). Rollback restores the previous text.
+- **Sign text in result rows** — edited sign content is shown as a continuous text string in search result rows and their hover tooltips.
+- **CraftBook sign interaction fix** — cancelled CraftBook sign interactions are now recorded correctly instead of being silently dropped.
+- **Configurable command aliases** — all command aliases (`/sg`, `/s`, etc.) can be changed or removed via `commands.aliases.<command>` in `config.conf`; a server restart is required for alias changes to apply.
+- **Per-action permissions** — each event type in `config.conf` supports a `permission` and a `rollback-permission` node, allowing fine-grained access control per event; falls back to `spyglass.search` / `spyglass.rollback` when not set.
+- **Configurable wand appearance** — the inspection wand's display name and lore are now configurable via `tool.name` and `tool.lore` in `messages.conf`.
+- **Legacy color code support** — MiniMessage legacy color codes (`&a`, `&b`, etc.) are accepted in all message templates.
+- **Configurable hover lines per event** — `results.hover.events.<event>.lines` lets you define field-by-field what appears in the hover tooltip for each event type. Lines referencing empty placeholders are hidden automatically.
+- **Extension bag fields as placeholders** — custom extension fields are available as `%field-name%` placeholders in hover line templates.
+- **`%count%` always populated** — single-record hover tooltips now show `Count: 1` instead of an empty field.
+- **Full command line in search results** — results for `command` events now display the complete command line (e.g. `/sg say hello`) instead of just the command name.
+- **Timezone configuration** — a `timezone` key (IANA ID, e.g. `"Europe/Madrid"`) in `config.conf` controls how dates and times are displayed. Reloads live with `/sg reload`.
+- **bStats telemetry removed** — the fork no longer bundles or reports anonymous usage statistics to bstats.org.
+- **Rebranding to PXX-Spyglass** — README, documentation website, and all branding updated to reflect this as an independent community fork.
